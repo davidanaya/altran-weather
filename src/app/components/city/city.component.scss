@@ -1,6 +1,9 @@
+:host {
+  flex-basis: 300px;
+}
+
 .city-card {
   border: 1px solid black;
-  flex-basis: 300px;
   padding: 16px;
   background: #fff;
   border-radius: 2px;
@@ -12,7 +15,7 @@
     font-size: 1.75em;
   }
 
-  .city-card__temp {
-    font-size: 1.25em;
+  .city-card__temperature {
+    font-size: 2.25em;
   }
 }

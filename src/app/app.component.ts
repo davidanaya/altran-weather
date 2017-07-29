@@ -5,7 +5,7 @@ import { environment } from '../environments/environment';
 @Component({
   selector: 'app-root',
   template: `
-    <app-cities-list [refresh]="refresh"></app-cities-list>
+    <router-outlet></router-outlet>
   `,
   styleUrls: ['./app.component.scss']
 })
