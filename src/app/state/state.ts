@@ -9,10 +9,12 @@ export interface City {
 
 export interface AppState {
   cities: City[];
-  weatherByCity: { [key: string]: Weather };
+  weatherByCity: { [key: number]: Weather };
+  historicalByCity: { [key: number]: Weather[] };
 }
 
 export const INITIAL_STATE: AppState = {
   cities: INITIAL_CITIES,
-  weatherByCity: {}
+  weatherByCity: {},
+  historicalByCity: {}
 };
