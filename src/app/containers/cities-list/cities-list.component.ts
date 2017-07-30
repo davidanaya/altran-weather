@@ -4,6 +4,11 @@ import { Observable } from 'rxjs/Observable';
 import { Subscription } from 'rxjs/Subscription';
 import { Subject } from 'rxjs/Subject';
 
+import 'rxjs/add/observable/timer';
+import 'rxjs/add/operator/do';
+import 'rxjs/add/operator/take';
+import 'rxjs/add/operator/takeUntil';
+
 import { Store } from '@ngrx/store';
 
 import { environment } from 'environments/environment';
@@ -15,10 +20,13 @@ import { Weather } from 'app/services/weather.model';
 @Component({
   selector: 'app-cities-list',
   template: `
+    <h3 class="title">Current weather</h3>
+
     <div class="timeout">
       <div>Refreshing data in {{ timeout$ | async }} seconds</div>
       <a (click)="reload()">Refresh now</a>
     </div>
+
     <div class="cities-list">
       <app-city
         *ngFor="let city of (cities$ | async)"

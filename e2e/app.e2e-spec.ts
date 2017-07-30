@@ -1,13 +1,13 @@
-import { MyAngularCliSeedPage } from './app.po';
+import { AltranWeatherPage } from './app.po';
 
-describe('my-angular-cli-seed App', () => {
-  let page: MyAngularCliSeedPage;
+describe('altran-weather App', () => {
+  let page: AltranWeatherPage;
 
   beforeEach(() => {
-    page = new MyAngularCliSeedPage();
+    page = new AltranWeatherPage();
   });
 
-  it('should display welcome message', () => {
+  it('should start', () => {
     page.navigateTo();
     expect(true);
   });
