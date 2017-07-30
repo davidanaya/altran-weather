@@ -24,7 +24,7 @@ export class LoadWeatherEffectService {
       this.cities$.switchMap(cities =>
         Observable.merge(
           ...cities.map(city =>
-            this.service.getWeatherByCityIdMock(city.id, city.name)
+            this.service.getWeatherByCityId(city.id)
           )
         )
       )

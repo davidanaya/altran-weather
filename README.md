@@ -1,7 +1,13 @@
 # AltranWeather
 
 To install all dependencies, please run ```npm install```
+
+I've realized that even though it's in the package.json, the @ngrx/store-devtools is not installed with the previous command, so please also run ```npm i @ngrx/store-devtools```
+
 Afterwards, run the app in development mode or as a standalone app (see below).
+Easiest way is with ```ng serve``` or ```npm start```
+
+You can follow the state management with the Redux Devtools extension for Chrome.
 
 ## Considerations
 
@@ -15,6 +21,7 @@ Components are classified as smart or presentational in the folders containers a
 The style is very basic. I'm not a fan of bootstrap, foundation or any other css library, but the project as Angular Material ready to use if needed. 
 
 I understand styling and I have good knowledge of flex, scss, design patterns (responsive design, atomic design) but it's not my field, so I prefer not to spend too much time on it.
+I just tested it with Chrome, so there might be issues in Safari or older versions of other browsers.
 
 You'll see that the code is not commented; I believe that good code should not need comments, and although this is a very simple scenario I like to keep my functions as small as possible.
 
