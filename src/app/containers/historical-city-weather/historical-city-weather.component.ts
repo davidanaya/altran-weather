@@ -12,9 +12,13 @@ import { Weather } from 'app/services/weather.model';
 @Component({
   selector: 'app-historical-city-weather',
   template: `
+    <h3 class="title">Historical weather</h3>
+
     <a class="navigation" routerLink="/home">Home</a>
+
     <div class="historical-data" *ngIf="historicalByCity$ | async; else no_data_found; let historical">
       <h3 class="city-name">{{ historical[0].name }}</h3>
+
       <div *ngFor="let weather of historical">
         <span class="date">{{ weather.timestamp | date:'medium' }}: </span>
         <span class="temperature">{{ weather.temp }}&deg;C</span>
@@ -30,7 +34,7 @@ import { Weather } from 'app/services/weather.model';
   styleUrls: ['./historical-city-weather.component.scss']
 })
 export class HistoricalCityWeatherComponent implements OnInit {
-  historicalByCity$: Observable<{ [key: string]: Weather }>;
+  historicalByCity$: Observable<{ [key: string]: Weather[] }>;
 
   constructor(private route: ActivatedRoute, private store: Store<AppState>) {}
 
@@ -39,7 +43,7 @@ export class HistoricalCityWeatherComponent implements OnInit {
       const cityId = params['id'];
       this.historicalByCity$ = this.store
         .select('historicalByCity')
-        .map(historical => historical[cityId])
+        .map(historical => historical && historical[cityId])
         .map(
           byCity =>
             byCity &&
